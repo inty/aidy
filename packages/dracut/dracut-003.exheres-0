@@ -1,0 +1,52 @@
+# Copyright 2009 Adriaan Leijnse
+# Distributed under the terms of the GNU General Public License v2
+# Based in part on 'dracut-003.ebuild' from Gentoo, which is
+#     Copyright 1999-2009 Gentoo Foundation
+
+SUMMARY="Generic initramfs generation tool"
+DESCRIPTION="
+Dracut is an initramfs infrastructure. Unlike previous initramfs systems, Dracut aims to have as little as possible hard-coded into the initramfs.
+"
+HOMEPAGE="http://sourceforge.net/projects/dracut/"
+DOWNLOADS="${HOMEPAGE}/files/${PNV}.tar.bz2/download"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~x86 ~amd64"
+
+DEPENDENCIES="
+    build-run:
+        app-shells/dash
+    run:
+        >=sys-apps/util-linux-ng-2.16
+        >=sys-appsl/module-init-tools/3.7
+    suggestion:
+        sys-fs/cryptsetup
+        sys-fs/mdadm
+        >=sys-fs/lvm2-2.02.33
+        net-fs/nfs-utils net-nds/rpcbind
+        sys-apps/iproute2
+        net-misc/dhcp
+        net-misc/bridge-utils
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
+src_compile() {
+    nonfatal emake WITH_SWITCH_ROOT=0 prefix=/usr sysconfdir=/etc || die "emake failed"
+}
+
+DEFAULT_SOURCE_INSTALL_PARAMS=(
+    # Don't use the switch_root provided with package
+    WITH_SWITCH_ROOT=0
+    prefix=/usr
+    sysconfdir=/etc
+    DESTDIR="${IMAGE}"
+)
+
+src_install() {
+    default
+    local modules_dir="${IMAGE}/usr/share/dracut/modules.d"
+    echo "${PNVR}" > "${modules_dir}"/10rpmversion/dracut-version
+    dodoc HACKING TODO AUTHORS NEWS README*
+}
