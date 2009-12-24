@@ -1,0 +1,20 @@
+# Copyright 2009 Adriaan Leijnse
+# Distributed under the terms of the GNU Public License v2
+
+SUMMARY="Mono bindings for gnome-keyring"
+HOMEPAGE="http://www.mono-project.com/Libraries#Gnome-KeyRing-Sharp"
+DOWNLOADS="http://ftp.novell.com/pub/mono/sources/gnome-keyring-sharp/${PNV}.tar.bz2"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~x86 ~amd64"
+MYOPTIONS="dbus"
+
+DEPENDENCIES="
+    dbus? ( sys-apps/dbus )
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( dbus )
+
