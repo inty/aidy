@@ -13,6 +13,7 @@ MYOPTIONS="dbus"
 
 DEPENDENCIES="
     dbus? ( sys-apps/dbus )
+    gnome-bindings/gnome-sharp
 "
 
 BUGS_TO="adriaan@leijnse.net"
