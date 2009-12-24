@@ -17,12 +17,15 @@ MYOPTIONS="
 
 DEPENDENCIES="
     gnome-bindings/gnome-keyring-sharp
-    notify-sharp
+    gnome-bindings/notify-sharp
+    gnome-bindings/gnome-desktop-sharp
+    gnome-bindings/gnome-sharp
+    gnome-bindings/gtk-sharp
+    dev-libs/ndesk-dbus
+    dev-libs/ndesk-dbus-glib
 "
 
 BUGS_TO="adriaan@leijnse.net"
 
-DEFAULT_SRC_CONFIGURE_PARAMS=( )
-DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( )
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( nls )
 

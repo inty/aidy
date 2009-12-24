@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU Public License v2
 
 SCM_REPOSITORY="http://svn.galago-project.org/"
-SCM_BRANCH="${PN}"
+SCM_SUBPATH="${PN}"
 
 require scm-svn mono
 
