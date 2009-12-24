@@ -1,0 +1,28 @@
+# Copyright 2009 Adriaan Leijnse
+# Distributed under the terms of the GNU Public License v2
+require mono gnome-2
+
+SUMMARY=""
+DESCRIPTION="
+"
+HOMEPAGE="http://do.davebsd.com/"
+DOWNLOADS="http://edge.launchpad.net/do/$(ever range -2 ${PV})/$(ever range -3 ${PV})/+download/${PNV}.tar.gz"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~x86 ~amd64"
+MYOPTIONS="
+    nls 
+"
+
+DEPENDENCIES="
+    gnome-bindings/gnome-keyring-sharp
+    notify-sharp
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( )
+
