@@ -1,0 +1,20 @@
+# Copyright 2009 Adriaan Leijnse
+# Based in part on media-libs/libraw1394 from exherbo::tanderson
+# Copyright 2008 Thomas Anderson
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="IEC 61883 over libraw1394 for media streams"
+DESCRIPTION="
+An implementation of the most relevant parts of IEC 61883 over libraw1394 for transmission,
+reception, and management of media streams and devices such as DV, MPEG2-TS, audio, and MIDI.
+"
+HOMEPAGE="http://ieee1394.wiki.kernel.org"
+DOWNLOADS="http://www.kernel.org/pub/linux/libs/ieee1394/${PNV}.tar.bz2"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~x86 ~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="media-libs/libraw1394"
+

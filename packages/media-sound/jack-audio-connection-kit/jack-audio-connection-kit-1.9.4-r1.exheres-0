@@ -1,0 +1,44 @@
+# Copyright 2009 Adriaan Leijnse
+# Distributed under the terms of the GNU Public License v2
+
+require waf
+
+SUMMARY="JACK is a low-latency audio server"
+DESCRIPTION="
+JACK is a low-latency audio server, written for any operating system that is reasonably POSIX
+compliant. It currently exists for Linux, OS X, Solaris, FreeBSD and Windows. It can connect several
+client applications to an audio device, and allow them to share audio with each other. Clients can
+run as separate processes like normal applications, or within the JACK server as \"plugins\".
+JACK was designed from the ground up for professional audio work, and its design focuses on two key
+areas: synchronous execution of all clients, and low latency operation.
+"
+HOMEPAGE="http://jackaudio.org"
+DOWNLOADS="http://www.grame.fr/~letz/${PNV}.tar.bz2"
+
+WORK="${WORKBASE}/jack-${PV}"
+
+LICENCES="GPL-2 LGPL-2.1"
+SLOT="0"
+PLATFORMS="~x86 ~amd64"
+MYOPTIONS="doc firewire"
+
+DEPENDENCIES="
+    build:
+    build+run:
+        media-libs/libsamplerate
+        sys-apps/dbus
+        firewire? ( media-libs/libffado )
+        doc? ( app-doc/doxygen )
+"
+
+BUGS_TO=""
+
+# Patches to make ladish work
+DEFAULT_SRC_PREPARE_PATCHES=( -p1 "${FILES}/jack2-ladi-2009-12-30.patch" )
+
+src_configure () {
+    ewaf configure \
+        --prefix=/usr \
+        $(option doc && echo "--doxygen")
+}
+
