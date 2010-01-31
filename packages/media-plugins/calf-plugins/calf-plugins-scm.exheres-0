@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://repo.or.cz/calf.git"
-require scm-git
+require scm-git autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
 SUMMARY="Calf ladspa, lv2 and dssi plugins"
 DESCRIPTION="
@@ -14,13 +14,13 @@ HOMEPAGE="http://calf.sourceforge.net"
 
 LICENCES="GPL-2"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="dssi ladspa lv2"
 
 DEPENDENCIES="
     build+run:
     x11-libs/cairo
-    x11-libs/gtk+[>=2.12]
+    x11-libs/gtk+:2[>=2.12]
     dev-util/glade
     media-sound/jack-audio-connection-kit
     media-sound/fluidsynth
