@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://repo.or.cz/calf.git"
-require scm-git autotools [ supported_autoconf=[ 2.5] supported_automake=[ 1.11 ] ]
+require scm-git autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
 SUMMARY="Calf ladspa, lv2 and dssi plugins"
 DESCRIPTION="
