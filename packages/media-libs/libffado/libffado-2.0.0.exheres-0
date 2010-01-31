@@ -15,7 +15,7 @@ DOWNLOADS="http://www.ffado.org/files/${PNV}.tar.gz"
 
 LICENCES="GPL-2 GPL-3"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="
     qt4 [[ description = [ Builds ffado-mixer ] ]]
     bebob [[ description = [ Support BridgeCo BeBoB chip devices ] ]]
@@ -25,7 +25,6 @@ MYOPTIONS="
 "
 
 DEPENDENCIES="
-    run:
     build+run:
         sys-apps/dbus
         dev-cpp/libxml++

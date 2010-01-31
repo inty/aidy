@@ -8,12 +8,13 @@ DOWNLOADS="http://ftp.novell.com/pub/mono/sources/gnome-keyring-sharp/${PNV}.tar
 
 LICENCES="MIT"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="dbus"
 
 DEPENDENCIES="
-    dbus? ( sys-apps/dbus )
-    gnome-bindings/gnome-sharp
+    build+run:
+        dbus? ( sys-apps/dbus )
+        gnome-bindings/gnome-sharp
 "
 
 BUGS_TO="adriaan@leijnse.net"

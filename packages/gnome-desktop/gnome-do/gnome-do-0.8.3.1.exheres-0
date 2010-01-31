@@ -2,18 +2,17 @@
 # Distributed under the terms of the GNU Public License v2
 require mono gnome-2
 
-SUMMARY=""
+SUMMARY="Application launcher for GNOME"
 DESCRIPTION="
+GNOME Do allows you to quickly search for many items present on your desktop or the web, and perform useful actions on those items.
 "
 HOMEPAGE="http://do.davebsd.com/"
 DOWNLOADS="http://edge.launchpad.net/do/$(ever range -2 ${PV})/$(ever range -3 ${PV})/+download/${PNV}.tar.gz"
 
 LICENCES="GPL-3"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
-MYOPTIONS="
-    nls 
-"
+PLATFORMS="~amd64"
+MYOPTIONS="nls"
 
 DEPENDENCIES="
     gnome-bindings/gnome-keyring-sharp

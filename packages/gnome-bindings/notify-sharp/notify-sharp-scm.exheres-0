@@ -8,11 +8,10 @@ require scm-svn mono
 
 SUMMARY="Mono bindings for libnotify"
 HOMEPAGE="http://www.galago-project.org"
-DOWNLOADS=""
 
 LICENCES="MIT"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="doc"
 
 DEPENDENCIES="
