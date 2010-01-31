@@ -19,19 +19,19 @@ WORK="${WORKBASE}/jack-${PV}"
 
 LICENCES="GPL-2 LGPL-2.1"
 SLOT="0"
-PLATFORMS="~x86 ~amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="doc firewire"
 
 DEPENDENCIES="
     build:
+        doc? ( app-doc/doxygen )
     build+run:
         media-libs/libsamplerate
         sys-apps/dbus
         firewire? ( media-libs/libffado )
-        doc? ( app-doc/doxygen )
 "
 
-BUGS_TO=""
+BUGS_TO="adriaan@leijnse.net"
 
 # Patches to make ladish work
 DEFAULT_SRC_PREPARE_PATCHES=( -p1 "${FILES}/jack2-ladi-2009-12-30.patch" )
