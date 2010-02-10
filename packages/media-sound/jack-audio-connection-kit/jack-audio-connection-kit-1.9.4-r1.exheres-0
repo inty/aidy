@@ -18,7 +18,7 @@ DOWNLOADS="http://www.grame.fr/~letz/${PNV}.tar.bz2"
 WORK="${WORKBASE}/jack-${PV}"
 
 LICENCES="GPL-2 LGPL-2.1"
-SLOT="0"
+SLOT="1"
 PLATFORMS="~amd64"
 MYOPTIONS="doc firewire"
 
@@ -39,6 +39,7 @@ DEFAULT_SRC_PREPARE_PATCHES=( -p1 "${FILES}/jack2-ladi-2009-12-30.patch" )
 src_configure () {
     ewaf configure \
         --prefix=/usr \
+        --dbus
         $(option doc && echo "--doxygen")
 }
 
