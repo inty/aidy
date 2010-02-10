@@ -1,3 +1,7 @@
+Source: from laditools distribution
+Upstream: yes
+Reason: various issues in 1.9.4 that prevented laditools from working
+
 diff --git a/ChangeLog b/ChangeLog
 index 8dfeca7..66aa7ae 100644
 --- a/ChangeLog
