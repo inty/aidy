@@ -27,6 +27,7 @@ MYOPTIONS="
     firewire [[ description = [ Build the FFADO firewire driver ] ]]
     alsa [[ description = [ Build the ALSA driver ] ]]
     dbus [[ description = [ Build the JACK2 D-Bus interface ] ]]
+    debug
 "
 
 DEPENDENCIES="
@@ -47,6 +48,7 @@ src_configure () {
     # no --doxygen doesn't build docs
     ewaf configure \
         --prefix=/usr \
+        $(option debug && echo '--debug') \
         $(option dbus && echo '--dbus') \
         --classic \
         $(option doc && echo '--doxygen') \
