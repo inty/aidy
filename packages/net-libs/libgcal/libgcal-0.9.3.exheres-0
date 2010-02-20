@@ -1,0 +1,22 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require googlecode
+
+SUMMARY="A C library to handle google calendar and contacts"
+
+LICENCES=""
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="debug"
+
+DEPENDENCIES="
+    build+run:
+    dev-libs/libxml2
+    net-misc/curl
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( debug )
+
