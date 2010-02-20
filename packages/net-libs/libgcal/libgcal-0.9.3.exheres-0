@@ -5,7 +5,7 @@ require googlecode
 
 SUMMARY="A C library to handle google calendar and contacts"
 
-LICENCES=""
+LICENCES="MIT"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS="debug"
