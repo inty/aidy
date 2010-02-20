@@ -1,0 +1,22 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part on googledata-1.0.ebuild from http://bugs.gentoo.org/280697
+
+require googlecode [ project=libgcal ] kde
+
+SUMMARY="Google contacts and calendar akonadi resource"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+    net-libs/libgcal[>=0.9.2]
+    dev-libs/boost
+    dev-libs/libxslt
+    server-pim/akonadi
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
