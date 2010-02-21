@@ -19,14 +19,14 @@ MYOPTIONS="dssi ladspa lv2"
 
 DEPENDENCIES="
     build+run:
-    x11-libs/cairo
-    x11-libs/gtk+:2[>=2.12]
-    dev-util/glade
-    media-sound/jack-audio-connection-kit
-    media-sound/fluidsynth
-    ladspa? ( media-libs/ladspa-sdk )
-    dssi? ( media-libs/dssi )
-    lv2? ( media-libs/lv2core )
+        x11-libs/cairo
+        x11-libs/gtk+:2[>=2.12]
+        dev-util/glade
+        media-sound/jack-audio-connection-kit
+        media-sound/fluidsynth
+        ladspa? ( media-libs/ladspa-sdk )
+        dssi? ( media-libs/dssi )
+        lv2? ( media-libs/lv2core )
 "
 
 BUGS_TO="adriaan@leijnse.net"

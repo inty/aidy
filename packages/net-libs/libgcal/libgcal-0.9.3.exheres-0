@@ -12,8 +12,8 @@ MYOPTIONS="debug"
 
 DEPENDENCIES="
     build+run:
-    dev-libs/libxml2
-    net-misc/curl
+        dev-libs/libxml2
+        net-misc/curl
 "
 
 BUGS_TO="adriaan@leijnse.net"

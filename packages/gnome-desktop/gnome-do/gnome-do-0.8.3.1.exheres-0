@@ -15,13 +15,14 @@ PLATFORMS="~amd64"
 MYOPTIONS="nls"
 
 DEPENDENCIES="
-    gnome-bindings/gnome-keyring-sharp
-    gnome-bindings/notify-sharp
-    gnome-bindings/gnome-desktop-sharp
-    gnome-bindings/gnome-sharp
-    gnome-bindings/gtk-sharp
-    dev-libs/ndesk-dbus
-    dev-libs/ndesk-dbus-glib
+    build+run:
+        gnome-bindings/gnome-keyring-sharp
+        gnome-bindings/notify-sharp
+        gnome-bindings/gnome-desktop-sharp
+        gnome-bindings/gnome-sharp
+        gnome-bindings/gtk-sharp
+        dev-libs/ndesk-dbus
+        dev-libs/ndesk-dbus-glib
 "
 
 BUGS_TO="adriaan@leijnse.net"
