@@ -11,6 +11,8 @@ PLATFORMS="~amd64"
 MYOPTIONS="debug"
 
 DEPENDENCIES="
+    build:
+        dev-util/pkg-config
     build+run:
         dev-libs/libxml2
         net-misc/curl
