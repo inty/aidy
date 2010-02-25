@@ -23,6 +23,7 @@ DEPENDENCIES="
         gnome-bindings/gtk-sharp
         dev-libs/ndesk-dbus
         dev-libs/ndesk-dbus-glib
+	    dev-dotnet/mono-addins[gui]
 "
 
 BUGS_TO="adriaan@leijnse.net"
