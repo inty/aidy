@@ -1,0 +1,29 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part on zynjacku-9999.ebuild from http://proaudio.tuxfamily.org
+
+SCM_REPOSITORY="git://repo.or.cz/zynjacku.git"
+require scm-git autotools [ supported_autoconf=[ 2.61 ] supported_automake=[ 1.11 ] ]
+
+SUMMARY="zynjacku is a JACK based host for LV2 synths"
+DESCRIPTION="
+zynjacku is JACK based, GTK (2.x) host for LV2 synths. It has one JACK MIDI input port (routed to all hosted synths) and one (two for stereo synths) JACK audio output port per plugin. Such design provides multi-timbral sound by running several synth plugins.
+"
+HOMEPAGE="http://home.gna.org/zynjacku/"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        media-sound/jack-audio-connection-kit
+        media-libs/lv2core
+        gnome-bindings/pygtk
+        dev-lang/python[>=2.5.2]
+        dev-python/pycairo
+        media-libs/lv2dynparam
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
