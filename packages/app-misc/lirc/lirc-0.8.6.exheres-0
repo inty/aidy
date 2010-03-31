@@ -1,0 +1,19 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="LIRC is a package that allows you to decode and send infra-red signals of many (but not all) commonly used remote controls."
+HOMEPAGE="http://www.lirc.org/"
+DOWNLOADS="mirror://sourceforge/lirc/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+BUGS_TO="adriaan@leijnse.net"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --with-driver=none
+    --enable-sandboxed
+    --without-x
+)
+
