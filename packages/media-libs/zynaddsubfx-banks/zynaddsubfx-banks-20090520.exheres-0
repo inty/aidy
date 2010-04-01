@@ -1,0 +1,27 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Released under the terms of the GNU General Public License v2
+# Based in part on zynaddsubfx-banks-20090520.ebuild from the Gentoo Proaudio overlay
+
+SUMMARY="ZynAddSubFX banks/instrumentsZynAddSubFX banks/instruments"
+HOMEPAGE="http://zynaddsubfx.sourceforge.net/doc/instruments/"
+
+MY_PV="banks${PV}"
+
+DOWNLOADS="http://download.tuxfamily.org/proaudio/distfiles/${MY_PV}.zip"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="media-sound/zynaddsubfx"
+
+BUGS_TO="adriaan@leijnse.net"
+
+WORK=${WORKBASE}
+
+src_install() {
+    cd ${WORK}
+    mv ${MY_PV} banks
+    insinto /usr/share/zynaddsubfx
+    doins -r banks
+}
