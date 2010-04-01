@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=lv2rack
-GenericName=LV2 effect plugins host
-Comment=JACK based host for LV2 effect plugins
-Exec=lv2rack
-Icon=zynjacku
-Terminal=false
-Type=Application
-Categories=GTK;AudioVideo;Audio;Midi;X-Jack;X-DigitalProcessing;

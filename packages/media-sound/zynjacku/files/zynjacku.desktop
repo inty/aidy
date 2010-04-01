@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=zynjacku
-GenericName=LV2 synth host
-Comment=JACK based host for LV2 synths
-Exec=zynjacku
-Icon=zynjacku
-Terminal=false
-Type=Application
-Categories=GTK;AudioVideo;Audio;Midi;X-Jack;X-Synthesis;
