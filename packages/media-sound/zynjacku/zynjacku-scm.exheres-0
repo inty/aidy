@@ -3,7 +3,7 @@
 # Based in part on zynjacku-9999.ebuild from http://proaudio.tuxfamily.org
 
 SCM_REPOSITORY="git://repo.or.cz/zynjacku.git"
-require scm-git autotools [ supported_autoconf=[ 2.61 ] supported_automake=[ 1.11 ] ]
+require scm-git autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
 SUMMARY="zynjacku is a JACK based host for LV2 synths"
 DESCRIPTION="
@@ -26,4 +26,13 @@ DEPENDENCIES="
 "
 
 BUGS_TO="adriaan@leijnse.net"
+
+src_install() {
+    default
+    insinto /usr/share/pixmaps
+    doins "${FILES}/${PN}.png"
+    insinto /usr/share/applications
+    doins "${FILES}/${PN}.desktop"
+    doins "${FILES}/lv2rack.desktop"
+}
 
