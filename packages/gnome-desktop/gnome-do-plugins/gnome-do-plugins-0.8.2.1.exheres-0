@@ -1,0 +1,52 @@
+# Copyright 2010 Adriaan Leijnse <adriaan@leijnse.net>
+# Released under the terms of the GNU General Public License v2
+# Based in part on http://sources.gentoo.org/viewcvs.py/gentoo-x86/gnome-extra/gnome-do-plugins/gnome-do-plugins-0.8.2-r1.ebuild
+
+require mono gnome-2
+
+SUMMARY="Plugins for gnome-do"
+HOMEPAGE="https://launchpad.net/do-plugins"
+DOWNLOADS="http://launchpad.net/do-plugins/$(ever range 1-2)/${PV}/+download/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+# banshee: unwritten
+# evolution: needs evolution-sharp
+# flickr: needs flickrnet
+# gcal, gdocs, gmail: need gdata-sharp
+MYOPTIONS="
+    nls
+    youtube
+"
+
+DEPENDENCIES="
+    build+run:
+        gnome-desktop/gnome-do
+"
+
+BUGS_TO="adriaan@leijnse.net"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --enable-release=yes
+    --enable-debug=no
+    --disable-{banshee,evolution,flickr,gcal,gdocs,gmail}
+)
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( youtube )
+
+src_prepare() {
+    # Filed upstream as https://bugs.launchpad.net/do/+bug/392422
+    # Not sure why fixing Makefile.am doesn't work
+    edo sed -i -e '/BANSHEE_INDEXER_DLL/d' "${WORK}/BundledLibraries/Makefile.am"
+    edo sed -i -e '/BANSHEE_INDEXER_DLL/d' "${WORK}/BundledLibraries/Makefile.in"
+    default
+}
+
+src_compile() {
+    # The make system is unfortunately broken for parallel builds and
+    # upstream indicated on IRC that they have no intention to fix
+    # that.
+    emake -j1
+}
+
